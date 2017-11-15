@@ -42,4 +42,11 @@ class NameValidation {
         }
         return true;
     }
+
+    public Boolean isNull(String name) {
+        if (name == null) {
+            return false;
+        }
+        return true;
+    }
 }

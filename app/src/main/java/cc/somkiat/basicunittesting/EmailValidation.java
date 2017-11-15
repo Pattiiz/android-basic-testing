@@ -24,4 +24,11 @@ class EmailValidation {
         }
         return true;
     }
+
+    public Boolean isNull(String email) {
+        if (email == null) {
+            return false;
+        }
+        return true;
+    }
 }

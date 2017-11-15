@@ -11,35 +11,42 @@ import static junit.framework.TestCase.assertFalse;
 public class NameValidationTest {
 
     @Test
-    public void nullName() {
+    public void emptyName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isEmpty("");
         assertFalse("Not pass.It's empty.", result);
     }
 
     @Test
-    public void specialCharacter() {
+    public void nullName() {
+        NameValidation nameValidation = new NameValidation();
+        Boolean result = nameValidation.isNull(null);
+        assertFalse("Not pass.It's null.", result);
+    }
+
+    @Test
+    public void specialCharacterInName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isSpecialChar("Pattiiz..??");
         assertFalse("Not pass.It's have special character.", result);
     }
 
     @Test
-    public void numericName() {
+    public void numericNameInName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isNumeric("1234567890AAassfeee");
         assertFalse("Not correct.Have number in name.", result);
     }
 
     @Test
-    public void longName() {
+    public void longerThanTwentyCharacter() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isTooLong("Titiphattttttttttttttttttttttttttttt");
         assertFalse("Not correct. Have more than 20 character in name", result);
     }
 
     @Test
-    public void shortName() {
+    public void shorterThanTwoCharacter() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isTooShort("A");
         assertFalse("Not correct. Have less than 2 character in name", result);

@@ -18,9 +18,16 @@ public class EmailValidationTest {
     }
 
     @Test
-    public void nullEmail() {
+    public void emptyEmail() {
         EmailValidation emailValidation = new EmailValidation();
         Boolean result = emailValidation.isEmpty("");
+        assertFalse("Email can't empty", result);
+    }
+
+    @Test
+    public void nullEmail() {
+        EmailValidation emailValidation = new EmailValidation();
+        Boolean result = emailValidation.isNull(null);
         assertFalse("Email can't null", result);
     }
 }
