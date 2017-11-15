@@ -16,4 +16,11 @@ public class EmailValidationTest {
         Boolean result = emailValidation.isValidEmailFormat("abc@.com");
         assertFalse("Email wrong format.", result);
     }
+
+    @Test
+    public void nullEmail() {
+        EmailValidation emailValidation = new EmailValidation();
+        Boolean result = emailValidation.isEmpty("");
+        assertFalse("", result);
+    }
 }

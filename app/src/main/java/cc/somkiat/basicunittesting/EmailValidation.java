@@ -17,4 +17,11 @@ class EmailValidation {
         }
         return true;
     }
+
+    public Boolean isEmpty(String email) {
+        if (email.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
 }
