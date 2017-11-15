@@ -16,4 +16,11 @@ public class NameValidationTest {
         Boolean result = nameValidation.isEmpty("");
         assertFalse("Not pass.It's empty.", result);
     }
+
+    @Test
+    public void spacialCharacter() {
+        NameValidation nameValidation = new NameValidation();
+        Boolean result = nameValidation.isSpacialChar("asdpk(*^^");
+        assertFalse(result);
+    }
 }
