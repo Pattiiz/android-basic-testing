@@ -20,7 +20,7 @@ public class NameValidationTest {
     @Test
     public void spacialCharacter() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isSpacialChar("Pat#$%*^");
+        Boolean result = nameValidation.isSpacialChar("Pat.?*");
         assertFalse(result);
     }
 
@@ -35,6 +35,13 @@ public class NameValidationTest {
     public void longName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isTooLong("Titiphattttttttttttttttttttttttttttt");
+        assertFalse(result);
+    }
+
+    @Test
+    public void shortName() {
+        NameValidation nameValidation = new NameValidation();
+        Boolean result = nameValidation.isTooShort("A");
         assertFalse(result);
     }
 }

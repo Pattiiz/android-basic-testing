@@ -14,7 +14,7 @@ class NameValidation {
     }
 
     public Boolean isSpacialChar(String name) {
-        if (!name.matches("[a-zA-Z.? ]*")) {
+        if (!name.matches("[a-zA-Z]")) {
             return false;
         }
         return true;
@@ -31,6 +31,13 @@ class NameValidation {
 
     public Boolean isTooLong(String name) {
         if (name.length() > 20) {
+            return false;
+        }
+        return true;
+    }
+
+    public Boolean isTooShort(String name) {
+        if (name.length() < 2) {
             return false;
         }
         return true;
