@@ -41,7 +41,7 @@ public class NameValidationTest {
     @Test
     public void shortName() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isTooShort("AA");
+        Boolean result = nameValidation.isTooShort("A");
         assertFalse("Not correct. Have less than 2 character in name", result);
     }
 }
