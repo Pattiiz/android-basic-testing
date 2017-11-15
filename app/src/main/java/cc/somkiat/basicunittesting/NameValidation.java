@@ -19,4 +19,13 @@ class NameValidation {
         }
         return true;
     }
+
+    public Boolean isNumeric(String name) {
+        try {
+            double number = Double.parseDouble(name);
+        } catch(NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 }
