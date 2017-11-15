@@ -28,4 +28,11 @@ class NameValidation {
         }
         return true;
     }
+
+    public Boolean isTooLong(String name) {
+        if (name.length() > 20) {
+            return false;
+        }
+        return true;
+    }
 }

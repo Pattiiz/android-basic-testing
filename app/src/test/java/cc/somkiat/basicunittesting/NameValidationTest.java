@@ -20,14 +20,21 @@ public class NameValidationTest {
     @Test
     public void spacialCharacter() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isSpacialChar("#$%*^");
+        Boolean result = nameValidation.isSpacialChar("Pat#$%*^");
         assertFalse(result);
     }
 
     @Test
     public void numericName() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isNumeric("1234567890");
+        Boolean result = nameValidation.isNumeric("1234567890AAassfeee");
+        assertFalse(result);
+    }
+
+    @Test
+    public void longName() {
+        NameValidation nameValidation = new NameValidation();
+        Boolean result = nameValidation.isTooLong("Titiphattttttttttttttttttttttttttttt");
         assertFalse(result);
     }
 }
