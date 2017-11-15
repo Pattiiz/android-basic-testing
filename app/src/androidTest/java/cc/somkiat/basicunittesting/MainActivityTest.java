@@ -57,7 +57,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void pressRevertBUtton() {
+    public void pressRevertButton() {
         SystemClock.sleep(500);
         onView(withId(R.id.userNameInput)).perform(typeText("Pattiiz"), closeSoftKeyboard());
         SystemClock.sleep(500);

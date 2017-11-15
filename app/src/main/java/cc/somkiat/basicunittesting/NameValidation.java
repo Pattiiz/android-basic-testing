@@ -13,8 +13,8 @@ class NameValidation {
         return true;
     }
 
-    public Boolean isSpacialChar(String name) {
-        if (!name.matches("[a-zA-Z]")) {
+    public Boolean isSpecialChar(String name) {
+        if (!name.matches("[a-zA-Z]*")) {
             return false;
         }
         return true;

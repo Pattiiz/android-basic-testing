@@ -18,30 +18,30 @@ public class NameValidationTest {
     }
 
     @Test
-    public void spacialCharacter() {
+    public void specialCharacter() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isSpacialChar("Pat.?*");
-        assertFalse(result);
+        Boolean result = nameValidation.isSpecialChar("Pattiiz..??");
+        assertFalse("Not pass.It's have special character.", result);
     }
 
     @Test
     public void numericName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isNumeric("1234567890AAassfeee");
-        assertFalse(result);
+        assertFalse("Not correct.Have number in name.", result);
     }
 
     @Test
     public void longName() {
         NameValidation nameValidation = new NameValidation();
         Boolean result = nameValidation.isTooLong("Titiphattttttttttttttttttttttttttttt");
-        assertFalse(result);
+        assertFalse("Not correct. Have more than 20 character in name", result);
     }
 
     @Test
     public void shortName() {
         NameValidation nameValidation = new NameValidation();
-        Boolean result = nameValidation.isTooShort("A");
-        assertFalse(result);
+        Boolean result = nameValidation.isTooShort("AA");
+        assertFalse("Not correct. Have less than 2 character in name", result);
     }
 }
