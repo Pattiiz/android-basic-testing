@@ -2,6 +2,7 @@ package cc.somkiat.basicunittesting;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertFalse;
 
 /**
@@ -15,6 +16,13 @@ public class EmailValidationTest {
         EmailValidation emailValidation = new EmailValidation();
         Boolean result = emailValidation.isValidEmailFormat("abc@.com");
         assertFalse("Email wrong format.", result);
+    }
+
+    @Test
+    public void emailRightFormat() {
+        EmailValidation emailValidation = new EmailValidation();
+        Boolean result = emailValidation.isValidEmailFormat("pattiiz@gmail.com");
+        assertTrue("Email right pattern.", result);
     }
 
     @Test
